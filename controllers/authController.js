@@ -8,6 +8,7 @@ exports.signup = async (req, res) => {
     email,
     phone,
     password,
+    pdw.
   });
  
   res.json(user);
