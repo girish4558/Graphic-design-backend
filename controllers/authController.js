@@ -57,15 +57,34 @@ exports.verifyOtpEmail = async (req, res) => {
    Dummy phone signup
 ========================= */
 exports.signupPhone = async (req, res) => {
-  res.json({ msg: "Phone signup working (dummy)" });
+  const { phone } = req.body;
+
+  console.log("Signup Phone:", phone);
+
+  return res.status(200).json({
+    msg: "Phone signup successful (dummy)",
+    otp: "123456"
+  });
 };
+
 
 /* =========================
    Dummy phone login
 ========================= */
-exports.loginPhone = async (req, res) => {
-  res.json({ msg: "Phone login working (dummy)" });
+ exports.loginPhone = async (req, res) => {
+  const { phone } = req.body;
+
+  console.log("Login Phone:", phone);
+
+  const otp = "123456";   // dummy OTP
+
+  return res.status(200).json({
+    msg: "OTP sent successfully",
+    otp: otp
+  });
 };
+
+
 
 /* =========================
    Dummy verify phone OTP
